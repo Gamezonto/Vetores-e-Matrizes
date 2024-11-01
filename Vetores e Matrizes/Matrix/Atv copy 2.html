@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 97</title>
+</head>
+<body>
+    <h2>Soma dos Elementos de uma Matriz 2x2</h2>
+    <button onclick="exercicio97()">Executar Exercício 97</button>
+    <script>
+        function exercicio97() {
+            let matriz = [];
+            let soma = 0;
+            for (let i = 0; i < 2; i++) {
+                matriz[i] = [];
+                for (let j = 0; j < 2; j++) {
+                    matriz[i][j] = parseInt(prompt(`Digite o elemento [${i}][${j}]:`));
+                    soma += matriz[i][j];
+                }
+            }
+            alert("Soma dos elementos: " + soma);
+        }
+    </script>
+</body>
+</html>

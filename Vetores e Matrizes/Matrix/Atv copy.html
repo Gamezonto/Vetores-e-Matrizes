@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 96</title>
+</head>
+<body>
+    <h2>Matriz 3x3</h2>
+    <button onclick="exercicio96()">Executar Exercício 96</button>
+    <script>
+        function exercicio96() {
+            let matriz = [];
+            for (let i = 0; i < 3; i++) {
+                matriz[i] = [];
+                for (let j = 0; j < 3; j++) {
+                    matriz[i][j] = parseInt(prompt(`Digite o elemento [${i}][${j}]:`));
+                }
+            }
+            alert("Matriz 3x3:\n" + matriz.map(row => row.join(" ")).join("\n"));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 106</title>
+</head>
+<body>
+    <h2>Verificar se Duas Matrizes 2x2 São Iguais</h2>
+    <button onclick="exercicio106()">Executar Exercício 106</button>
+    <script>
+        function exercicio106() {
+            let matriz1 = [];
+            let matriz2 = [];
+            let iguais = true;
+
+            for (let i = 0; i < 2; i++) {
+                matriz1[i] = [];
+                matriz2[i] = [];
+                for (let j = 0; j < 2; j++) {
+                    matriz1[i][j] = parseInt(prompt(`Digite o elemento [${i}][${j}] da Matriz 1:`));
+                    matriz2[i][j] = parseInt(prompt(`Digite o elemento [${i}][${j}] da Matriz 2:`));
+                    if (matriz1[i][j] !== matriz2[i][j]) {
+                        iguais = false;
+                    }
+                }
+            }
+
+            alert(iguais ? "As matrizes são iguais" : "As matrizes não são iguais");
+        }
+    </script>
+</body>
+</html>

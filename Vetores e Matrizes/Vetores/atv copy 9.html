@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 89</title>
+</head>
+<body>
+    <h2>Quantidade de Números Positivos e Negativos</h2>
+    <button onclick="exercicio89()">Executar Exercício 89</button>
+    <script>
+        function exercicio89() {
+            let positivos = 0, negativos = 0;
+            for (let i = 0; i < 10; i++) {
+                let num = parseInt(prompt("Digite um número:"));
+                if (num > 0) positivos++;
+                else if (num < 0) negativos++;
+            }
+            alert("Positivos: " + positivos + "\nNegativos: " + negativos);
+        }
+    </script>
+</body>
+</html>

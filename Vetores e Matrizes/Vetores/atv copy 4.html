@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 84</title>
+</head>
+<body>
+    <h2>Quantidade de Números Pares</h2>
+    <button onclick="exercicio84()">Executar Exercício 84</button>
+    <script>
+        function exercicio84() {
+            let pares = 0;
+            for (let i = 0; i < 5; i++) {
+                let num = parseInt(prompt("Digite um número:"));
+                if (num % 2 === 0) pares++;
+            }
+            alert("Quantidade de números pares: " + pares);
+        }
+    </script>
+</body>
+</html>

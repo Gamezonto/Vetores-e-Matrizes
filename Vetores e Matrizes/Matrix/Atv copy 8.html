@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 103</title>
+</head>
+<body>
+    <h2>Menor Valor em uma Matriz 3x3</h2>
+    <button onclick="exercicio103()">Executar Exercício 103</button>
+    <script>
+        function exercicio103() {
+            let matriz = [];
+            let menor = Number.POSITIVE_INFINITY;
+            for (let i = 0; i < 3; i++) {
+                matriz[i] = [];
+                for (let j = 0; j < 3; j++) {
+                    matriz[i][j] = parseInt(prompt(`Digite o elemento [${i}][${j}]:`));
+                    if (matriz[i][j] < menor) menor = matriz[i][j];
+                }
+            }
+            alert("Menor valor na matriz: " + menor);
+        }
+    </script>
+</body>
+</html>

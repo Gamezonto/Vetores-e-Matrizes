@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 81</title>
+</head>
+<body>
+    <h2>Números na Ordem Inversa</h2>
+    <button onclick="exercicio81()">Executar Exercício 81</button>
+    <script>
+        function exercicio81() {
+            let numeros = [];
+            for (let i = 0; i < 5; i++) {
+                numeros.push(parseInt(prompt("Digite um número:")));
+            }
+            alert("Números na ordem inversa: " + numeros.reverse().join(", "));
+        }
+    </script>
+</body>
+</html>
