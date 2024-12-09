@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>108 - Maior Valor de Cada Linha</title>
+</head>
+<body>
+    <h1>Maior Valor de Cada Linha</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMaiorPorLinha()">Exibir Maior</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        
+        function adicionarNumero() {
+            linha.push(parseInt(document.getElementById("num").value));
+            if (linha.length === 4) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMaiorPorLinha() {
+            const maiores = matriz.map(linha => Math.max(...linha));
+            document.getElementById("resultado").innerText = maiores.join("\n");
+        }
+    </script>
+</body>
+</html>
+

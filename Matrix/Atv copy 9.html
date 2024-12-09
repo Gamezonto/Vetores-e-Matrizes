@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>104 - Verificar Simetria de uma Matriz 3x3</title>
+</head>
+<body>
+    <h1>Verificar Simetria de uma Matriz 3x3</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="verificarSimetria()">Verificar Simetria</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (linha.length === 3) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function verificarSimetria() {
+            let simetrica = true;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if (matriz[i][j] !== matriz[j][i]) {
+                        simetrica = false;
+                        break;
+                    }
+                }
+            }
+            document.getElementById("resultado").innerText = simetrica ? "A matriz é simétrica" : "A matriz não é simétrica";
+        }
+    </script>
+</body>
+</html>
+

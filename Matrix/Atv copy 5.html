@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>100 - Maior Valor na Matriz 3x3</title>
+</head>
+<body>
+    <h1>Maior Valor na Matriz 3x3</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMaior()">Exibir Maior</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        let maior = -Infinity;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (num > maior) {
+                maior = num;
+            }
+            if (linha.length === 3) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMaior() {
+            document.getElementById("resultado").innerText = "Maior valor: " + maior;
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intervalo de 10 a 50</title>
+</head>
+<body>
+    <h1>Intervalo de 10 a 50</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirIntervalo()">Exibir Intervalo</button>
+    <p id="resultado"></p>
+
+    <script>
+        let cont = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num >= 10 && num <= 50) {
+                cont++;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirIntervalo() {
+            document.getElementById("resultado").innerText = "Quantidade no intervalo de 10 a 50: " + cont;
+        }
+    </script>
+</body>
+</html>

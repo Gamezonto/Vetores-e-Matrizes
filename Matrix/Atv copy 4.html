@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>99 - Soma de Matrizes 2x2</title>
+</head>
+<body>
+    <h1>Soma de Matrizes 2x2</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularSomaMatrizes()">Calcular Soma Matrizes</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz1 = [];
+        const matriz2 = [];
+        let linha = [];
+        let currentMatrix = 1;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (linha.length === 2) {
+                if (currentMatrix === 1) {
+                    matriz1.push(linha);
+                } else {
+                    matriz2.push(linha);
+                }
+                linha = [];
+            }
+            if (matriz1.length === 2 && currentMatrix === 1) {
+                currentMatrix = 2;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularSomaMatrizes() {
+            const soma = [
+                [matriz1[0][0] + matriz2[0][0], matriz1[0][1] + matriz2[0][1]],
+                [matriz1[1][0] + matriz2[1][0], matriz1[1][1] + matriz2[1][1]]
+            ];
+            let output = "";
+            soma.forEach(row => {
+                output += row.join(" ") + "<br>";
+            });
+            document.getElementById("resultado").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
+
+
+

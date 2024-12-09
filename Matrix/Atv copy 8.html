@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>103 - Menor Valor em uma Matriz 3x3</title>
+</head>
+<body>
+    <h1>Menor Valor em uma Matriz 3x3</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMenor()">Exibir Menor</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        let menor = Infinity;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (num < menor) {
+                menor = num;
+            }
+            if (linha.length === 3) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMenor() {
+            document.getElementById("resultado").innerText = "Menor valor: " + menor;
+        }
+    </script>
+</body>
+</html>

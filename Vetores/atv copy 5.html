@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maior e Menor Valor</title>
+</head>
+<body>
+    <h1>Maior e Menor Valor</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMaiorMenor()">Exibir Maior e Menor</button>
+    <p id="resultadoMaior"></p>
+    <p id="resultadoMenor"></p>
+
+    <script>
+        let maior = -Infinity;
+        let menor = Infinity;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num > maior) maior = num;
+            if (num < menor) menor = num;
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMaiorMenor() {
+            document.getElementById("resultadoMaior").innerText = "Maior: " + maior;
+            document.getElementById("resultadoMenor").innerText = "Menor: " + menor;
+        }
+    </script>
+</body>
+</html>

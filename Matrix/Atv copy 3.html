@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>98 - Soma Diagonal Principal</title>
+</head>
+<body>
+    <h1>Soma Diagonal Principal</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularSomaDiagonal()">Calcular Soma Diagonal</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (linha.length === 3) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularSomaDiagonal() {
+            let somaDiagonal = 0;
+            for (let i = 0; i < 3; i++) {
+                somaDiagonal += matriz[i][i];
+            }
+            document.getElementById("resultado").innerText = "Soma Diagonal: " + somaDiagonal;
+        }
+    </script>
+</body>
+</html>
+

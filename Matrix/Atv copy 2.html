@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>97 - Soma da Matriz 2x2</title>
+</head>
+<body>
+    <h1>Soma da Matriz 2x2</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let soma = 0;
+        let linha = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            soma += num;
+            if (linha.length === 2) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularSoma() {
+            document.getElementById("resultado").innerText = "Soma: " + soma;
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Zero</title>
+</head>
+<body>
+    <h1>Verificar Zero</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="verificarZero()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        let hasZero = false;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num === 0) {
+                hasZero = true;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function verificarZero() {
+            document.getElementById("resultado").innerText = hasZero ? "Há pelo menos um número zero" : "Não há nenhum número zero";
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordem Decrescente</title>
+</head>
+<body>
+    <h1>Ordem Decrescente</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirDecrescente()">Exibir Ordem Decrescente</button>
+    <p id="resultado"></p>
+
+    <script>
+        const numeros = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            numeros.push(num);
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirDecrescente() {
+            document.getElementById("resultado").innerText = numeros.sort((a, b) => b - a).join("\n");
+        }
+    </script>
+</body>
+</html>
+

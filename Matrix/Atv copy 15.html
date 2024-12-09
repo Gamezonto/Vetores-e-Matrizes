@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>110 - Subtração entre Matrizes 2x2</title>
+</head>
+<body>
+    <h1>Subtração entre Matrizes 2x2</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularSubtracao()">Calcular Subtração</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz1 = [], matriz2 = [];
+        let linha = [], matrizAtual = matriz1;
+        
+        function adicionarNumero() {
+            linha.push(parseInt(document.getElementById("num").value));
+            if (linha.length === 2) {
+                matrizAtual.push(linha);
+                linha = [];
+                if (matrizAtual.length === 2) {
+                    matrizAtual = matrizAtual === matriz1 ? matriz2 : matriz1;
+                }
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularSubtracao() {
+            const subtracao = matriz1.map((linha, i) => linha.map((num, j) => num - matriz2[i][j]));
+            let output = "";
+            subtracao.forEach(row => {
+                output += row.join(" ") + "<br>";
+            });
+            document.getElementById("resultado").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
+

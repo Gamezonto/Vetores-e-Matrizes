@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>101 - Média Aritmética de uma Matriz 4x4</title>
+</head>
+<body>
+    <h1>Média Aritmética de uma Matriz 4x4</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let soma = 0;
+        let linha = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            soma += num;
+            if (linha.length === 4) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularMedia() {
+            const media = soma / 16;
+            document.getElementById("resultado").innerText = "Média: " + media;
+        }
+    </script>
+</body>
+</html>
+

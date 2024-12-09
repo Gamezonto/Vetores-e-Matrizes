@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soma dos Números</title>
+</head>
+<body>
+    <h1>Soma dos Números</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirSoma()">Exibir Soma</button>
+    <p id="resultado"></p>
+
+    <script>
+        let soma = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            soma += num;
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirSoma() {
+            document.getElementById("resultado").innerText = soma;
+        }
+    </script>
+</body>
+</html>

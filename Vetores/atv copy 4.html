@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contar Números Pares</title>
+</head>
+<body>
+    <h1>Contar Números Pares</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirPares()">Exibir Pares</button>
+    <p id="resultado"></p>
+
+    <script>
+        let contPares = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num % 2 === 0) {
+                contPares++;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirPares() {
+            document.getElementById("resultado").innerText = contPares;
+        }
+    </script>
+</body>
+</html>
+

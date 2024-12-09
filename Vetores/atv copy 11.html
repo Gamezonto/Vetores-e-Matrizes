@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soma de Positivos e Negativos</title>
+</head>
+<body>
+    <h1>Soma de Positivos e Negativos</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirSoma()">Exibir Soma</button>
+    <p id="resultadoPositivos"></p>
+    <p id="resultadoNegativos"></p>
+
+    <script>
+        let somaPositivos = 0, somaNegativos = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num > 0) {
+                somaPositivos += num;
+            } else if (num < 0) {
+                somaNegativos += num;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirSoma() {
+            document.getElementById("resultadoPositivos").innerText = "Soma dos positivos: " + somaPositivos;
+            document.getElementById("resultadoNegativos").innerText = "Soma dos negativos: " + somaNegativos;
+        }
+    </script>
+</body>
+</html>

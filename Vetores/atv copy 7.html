@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contar Números Positivos</title>
+</head>
+<body>
+    <h1>Contar Números Positivos</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirPositivos()">Exibir Positivos</button>
+    <p id="resultado"></p>
+
+    <script>
+        let contPositivos = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num > 0) {
+                contPositivos++;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirPositivos() {
+            document.getElementById("resultado").innerText = contPositivos;
+        }
+    </script>
+</body>
+</html>
+

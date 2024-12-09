@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Média de Pares e Ímpares</title>
+</head>
+<body>
+    <h1>Média de Pares e Ímpares</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMedia()">Exibir Média</button>
+    <p id="resultadoPares"></p>
+    <p id="resultadoImpares"></p>
+
+    <script>
+        let somaPares = 0, contPares = 0;
+        let somaImpares = 0, contImpares = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num % 2 === 0) {
+                somaPares += num;
+                contPares++;
+            } else {
+                somaImpares += num;
+                contImpares++;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMedia() {
+            document.getElementById("resultadoPares").innerText = "Média dos Pares: " + (somaPares / contPares);
+            document.getElementById("resultadoImpares").innerText = "Média dos Ímpares: " + (somaImpares / contImpares);
+        }
+    </script>
+</body>
+</html>
+

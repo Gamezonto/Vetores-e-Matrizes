@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>96 - Matriz 3x3</title>
+</head>
+<body>
+    <h1>Matriz 3x3</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMatriz()">Exibir Matriz</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (linha.length === 3) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMatriz() {
+            let output = "";
+            matriz.forEach(row => {
+                output += row.join(" ") + "<br>";
+            });
+            document.getElementById("resultado").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
+

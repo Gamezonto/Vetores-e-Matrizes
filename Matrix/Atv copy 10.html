@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>105 - Soma das Colunas de uma Matriz 4x4</title>
+</head>
+<body>
+    <h1>Soma das Colunas de uma Matriz 4x4</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularSomaColunas()">Calcular Soma Colunas</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        const somaColunas = [0, 0, 0, 0];
+        let linha = [];
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (linha.length === 4) {
+                matriz.push(linha);
+                linha.forEach((num, idx) => {
+                    somaColunas[idx] += num;
+                });
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularSomaColunas() {
+            let output = "";
+            somaColunas.forEach((soma, idx) => {
+                output += "Soma da coluna " + (idx + 1) + ": " + soma + "<br>";
+            });
+            document.getElementById("resultado").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
+

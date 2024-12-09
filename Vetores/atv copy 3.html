@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Média Aritmética</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirMedia()">Exibir Média</button>
+    <p id="resultado"></p>
+
+    <script>
+        let soma = 0;
+        let cont = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            soma += num;
+            cont++;
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirMedia() {
+            document.getElementById("resultado").innerText = soma / cont;
+        }
+    </script>
+</body>
+</html>

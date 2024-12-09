@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Positivos e Negativos</title>
+</head>
+<body>
+    <h1>Positivos e Negativos</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="exibirPositivosNegativos()">Exibir Quantidade</button>
+    <p id="resultadoPositivos"></p>
+    <p id="resultadoNegativos"></p>
+
+    <script>
+        let positivos = 0, negativos = 0;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            if (num > 0) {
+                positivos++;
+            } else if (num < 0) {
+                negativos++;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function exibirPositivosNegativos() {
+            document.getElementById("resultadoPositivos").innerText = "Positivos: " + positivos;
+            document.getElementById("resultadoNegativos").innerText = "Negativos: " + negativos;
+        }
+    </script>
+</body>
+</html>

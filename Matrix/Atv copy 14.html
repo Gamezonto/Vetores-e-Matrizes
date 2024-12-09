@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>109 - Verificar Matriz Identidade</title>
+</head>
+<body>
+    <h1>Verificar Matriz Identidade</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="verificarIdentidade()">Verificar Identidade</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz = [];
+        let linha = [];
+        
+        function adicionarNumero() {
+            linha.push(parseInt(document.getElementById("num").value));
+            if (linha.length === 3) {
+                matriz.push(linha);
+                linha = [];
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function verificarIdentidade() {
+            let identidade = true;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if ((i === j && matriz[i][j] !== 1) || (i !== j && matriz[i][j] !== 0)) {
+                        identidade = false;
+                    }
+                }
+            }
+            document.getElementById("resultado").innerText = identidade ? "Identidade" : "Não Identidade";
+        }
+    </script>
+</body>
+</html>

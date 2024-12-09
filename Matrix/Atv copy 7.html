@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>102 - Produto entre Matrizes 2x2</title>
+</head>
+<body>
+    <h1>Produto entre Matrizes 2x2</h1>
+    <input type="number" id="num" placeholder="Digite um número" />
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="calcularProduto()">Calcular Produto</button>
+    <p id="resultado"></p>
+
+    <script>
+        const matriz1 = [];
+        const matriz2 = [];
+        let linha = [];
+        let currentMatrix = 1;
+        
+        function adicionarNumero() {
+            const num = parseInt(document.getElementById("num").value);
+            linha.push(num);
+            if (linha.length === 2) {
+                if (currentMatrix === 1) {
+                    matriz1.push(linha);
+                } else {
+                    matriz2.push(linha);
+                }
+                linha = [];
+            }
+            if (matriz1.length === 2 && currentMatrix === 1) {
+                currentMatrix = 2;
+            }
+            document.getElementById("num").value = "";
+        }
+        
+        function calcularProduto() {
+            const produto = [
+                [0, 0],
+                [0, 0]
+            ];
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    for (let k = 0; k < 2; k++) {
+                        produto[i][j] += matriz1[i][k] * matriz2[k][j];
+                    }
+                }
+            }
+            let output = "";
+            produto.forEach(row => {
+                output += row.join(" ") + "<br>";
+            });
+            document.getElementById("resultado").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
+
